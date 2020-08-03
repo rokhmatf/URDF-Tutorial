@@ -1,0 +1,1103 @@
+<robot
+  name="Full_E-NIMB">
+  <link
+    name="trunk_link">
+    <inertial>
+      <origin
+        xyz="0.010929 0.010975 -0.033969"
+        rpy="0 0 0" />
+      <mass
+        value="0.95645" />
+      <inertia
+        ixx="0.0033906"
+        ixy="6.8628E-07"
+        ixz="-9.9175E-05"
+        iyy="0.0026138"
+        iyz="6.6119E-07"
+        izz="0.0011281" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/trunk_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/trunk_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0012924 0.0054227 -0.020338"
+        rpy="0 0 0" />
+      <mass
+        value="0.070327" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_yaw"
+    type="continuous">
+    <origin
+      xyz="0.0031632 -0.043972 -0.14668"
+      rpy="0 0 0" />
+    <parent
+      link="trunk_link" />
+    <child
+      link="right_hip_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0023238 0.01988 -0.010684"
+        rpy="0 0 0" />
+      <mass
+        value="0.18065" />
+      <inertia
+        ixx="2.1416E-06"
+        ixy="3.4231E-07"
+        ixz="-2.7542E-06"
+        iyy="9.2319E-05"
+        iyz="-4.3003E-07"
+        izz="9.2381E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_roll"
+    type="continuous">
+    <origin
+      xyz="0.0001 -0.019958 -0.054264"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_yaw_link" />
+    <child
+      link="right_hip_roll_link" />
+    <axis
+      xyz="0.99994 -0.010581 0" />
+  </joint>
+  <link
+    name="right_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.0076986 -0.0002181 -0.18603"
+        rpy="0 0 0" />
+      <mass
+        value="0.087737" />
+      <inertia
+        ixx="9.6037E-07"
+        ixy="2.3153E-07"
+        ixz="-1.2712E-07"
+        iyy="2.9508E-07"
+        iyz="4.0515E-07"
+        izz="8.1058E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hip_pitch"
+    type="continuous">
+    <origin
+      xyz="0.02275 0.019858 0.004564"
+      rpy="0 0 0" />
+    <parent
+      link="right_hip_roll_link" />
+    <child
+      link="right_thigh_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_shank_link">
+    <inertial>
+      <origin
+        xyz="-0.004668 -0.0019193 -0.10242"
+        rpy="0 0 0" />
+      <mass
+        value="0.11858" />
+      <inertia
+        ixx="3.474E-05"
+        ixy="5.0622E-07"
+        ixz="1.6326E-06"
+        iyy="3.1777E-05"
+        iyz="-9.8269E-06"
+        izz="3.1311E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_shank_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_shank_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_knee_pitch"
+    type="continuous">
+    <origin
+      xyz="0 -0.0002 -0.1995"
+      rpy="0 0 0" />
+    <parent
+      link="right_thigh_link" />
+    <child
+      link="right_shank_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_ankle_link">
+    <inertial>
+      <origin
+        xyz="-0.0204296885091848 3.41965016573478E-05 0.0152476745915215"
+        rpy="0 0 0" />
+      <mass
+        value="0.180646325421197" />
+      <inertia
+        ixx="2.14030426402543E-06"
+        ixy="2.90318400088357E-07"
+        ixz="2.75452995497299E-06"
+        iyy="9.22937045721077E-05"
+        iyz="4.52566896952119E-07"
+        izz="9.23545505663355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_ankle_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_ankle_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_pitch"
+    type="continuous">
+    <origin
+      xyz="0.00566881959338658 0 -0.199419443596701"
+      rpy="0 0 0" />
+    <parent
+      link="right_shank_link" />
+    <child
+      link="right_ankle_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_foot_link">
+    <inertial>
+      <origin
+        xyz="0.0565916210023486 -0.00801372527911209 -0.0248327008025211"
+        rpy="0 0 0" />
+      <mass
+        value="0.20491378337616" />
+      <inertia
+        ixx="1.3167777087754E-05"
+        ixy="1.56217595660679E-06"
+        ixz="2.91540763072454E-06"
+        iyy="0.000101588184541474"
+        iyz="-4.63570594124294E-06"
+        izz="9.22412313502104E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_ankle_roll"
+    type="continuous">
+    <origin
+      xyz="-0.0227499999998732 9.99999999998641E-05 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_ankle_link" />
+    <child
+      link="right_foot_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="left_hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0012941 -0.005425 -0.020342"
+        rpy="0 0 0" />
+      <mass
+        value="0.07034" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_hip_yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_yaw"
+    type="continuous">
+    <origin
+      xyz="0.00316324187631698 0.0660280638349792 -0.146683041828748"
+      rpy="0 0 0" />
+    <parent
+      link="trunk_link" />
+    <child
+      link="left_hip_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_hip_roll_link">
+    <inertial>
+      <origin
+        xyz="0.0023203 6.5803E-05 -0.015248"
+        rpy="0 0 0" />
+      <mass
+        value="0.18065" />
+      <inertia
+        ixx="2.1403E-06"
+        ixy="-2.9032E-07"
+        ixz="-2.7545E-06"
+        iyy="9.2294E-05"
+        iyz="4.5257E-07"
+        izz="9.2355E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_hip_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_hip_roll_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_roll"
+    type="continuous">
+    <origin
+      xyz="0.000100000000000038 0 -0.0496999999999994"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_yaw_link" />
+    <child
+      link="left_hip_roll_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="left_thigh_link">
+    <inertial>
+      <origin
+        xyz="0.00770485647372956 -0.000181895307765551 -0.186031964792609"
+        rpy="0 0 0" />
+      <mass
+        value="0.0877368275115639" />
+      <inertia
+        ixx="9.60254782182236E-07"
+        ixy="-2.31717521450591E-07"
+        ixz="-1.27186121101727E-07"
+        iyy="2.95081679887299E-07"
+        iyz="-4.05040606234051E-07"
+        izz="8.10695562468114E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_thigh_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_thigh_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hip_pitch"
+    type="continuous">
+    <origin
+      xyz="0.0227499999998732 9.99999999999474E-05 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_hip_roll_link" />
+    <child
+      link="left_thigh_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_shank_link">
+    <inertial>
+      <origin
+        xyz="-0.00465395531749331 0.00193167769730937 -0.102424147364243"
+        rpy="0 0 0" />
+      <mass
+        value="0.118566755750493" />
+      <inertia
+        ixx="3.46780337395405E-05"
+        ixy="-5.06046287647871E-07"
+        ixz="1.63275435857023E-06"
+        iyy="3.17230938968361E-05"
+        iyz="9.80595420039265E-06"
+        izz="3.12345975721964E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_shank_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_shank_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_knee_pitch"
+    type="continuous">
+    <origin
+      xyz="0 -0.000199999999999964 -0.1995"
+      rpy="0 0 0" />
+    <parent
+      link="left_thigh_link" />
+    <child
+      link="left_shank_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_ankle_link">
+    <inertial>
+      <origin
+        xyz="-0.0168712002407235 -2.19992893505938E-05 0.0166100283423745"
+        rpy="0 0 0" />
+      <mass
+        value="0.180646325421197" />
+      <inertia
+        ixx="2.14155493512678E-06"
+        ixy="-3.42307999115989E-07"
+        ixz="2.75421409465403E-06"
+        iyy="9.23193464719824E-05"
+        iyz="-4.30025832476118E-07"
+        izz="9.23814591916537E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_ankle_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_ankle_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_pitch"
+    type="continuous">
+    <origin
+      xyz="0.00211380670416902 0 -0.200781795890427"
+      rpy="0 0 0" />
+    <parent
+      link="left_shank_link" />
+    <child
+      link="left_ankle_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_foot_link">
+    <inertial>
+      <origin
+        xyz="0.056586704250218 0.00702324964754164 -0.024832540701792"
+        rpy="0 0 0" />
+      <mass
+        value="0.204884251089932" />
+      <inertia
+        ixx="1.3161689549123E-05"
+        ixy="-1.5686184553092E-06"
+        ixz="2.91261550573071E-06"
+        iyy="0.000101586341377897"
+        iyz="4.62816323606983E-06"
+        izz="9.2233201130411E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_foot_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_foot_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_ankle_roll"
+    type="continuous">
+    <origin
+      xyz="-0.0191949871106555 0.000900000000000067 0.00136235229372628"
+      rpy="0 0 0" />
+    <parent
+      link="left_ankle_link" />
+    <child
+      link="left_foot_link" />
+    <axis
+      xyz="0.999938071081334 0.0111289712975131 0" />
+  </joint>
+  <link
+    name="right_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="2.82826975434637E-05 -0.0227886656303254 -0.0025950565989533"
+        rpy="0 0 0" />
+      <mass
+        value="0.0690238318921817" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="0.00316324187631709 -0.0704719361650205 0.0353669581712522"
+      rpy="0 0 0" />
+    <parent
+      link="trunk_link" />
+    <child
+      link="right_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_upper_arm_link">
+    <inertial>
+      <origin
+        xyz="1.55814216551541E-05 -0.00162225891283573 -0.0148698732335418"
+        rpy="0 0 0" />
+      <mass
+        value="0.073632973819968" />
+      <inertia
+        ixx="2.74971464521444E-07"
+        ixy="-4.38677125356601E-08"
+        ixz="-4.02098160342423E-07"
+        iyy="8.66734605727297E-07"
+        iyz="-2.96457202633418E-08"
+        izz="5.9823166089924E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="0.000800000000000029 -0.0414124235214479 -0.0100011504458025"
+      rpy="0 0 0" />
+    <parent
+      link="right_shoulder_pitch_link" />
+    <child
+      link="right_upper_arm_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="right_lower_arm_link">
+    <inertial>
+      <origin
+        xyz="-1.08174316379439E-09 -0.00163774725934879 -0.0148681834679882"
+        rpy="0 0 0" />
+      <mass
+        value="0.0736329729613269" />
+      <inertia
+        ixx="8.69968868765391E-07"
+        ixy="2.69224040952967E-14"
+        ixz="-2.29406078011064E-14"
+        iyy="3.65953518300814E-07"
+        iyz="4.29471990681732E-07"
+        izz="5.0401535046458E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_lower_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/right_lower_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_pitch"
+    type="continuous">
+    <origin
+      xyz="0.0268999999999999 -0.0169820073740797 -0.156581836192923"
+      rpy="0 0 0" />
+    <parent
+      link="right_upper_arm_link" />
+    <child
+      link="right_lower_arm_link" />
+    <axis
+      xyz="0 0.994101529196566 -0.108453444615874" />
+  </joint>
+  <link
+    name="left_shoulder_pitch_link">
+    <inertial>
+      <origin
+        xyz="3.68294089842895E-05 0.0228037750587586 -0.00260115485045407"
+        rpy="0 0 0" />
+      <mass
+        value="0.0690466027030056" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_shoulder_pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_pitch"
+    type="continuous">
+    <origin
+      xyz="0.00316324187631711 0.0925280638349795 0.0353669581712522"
+      rpy="0 0 0" />
+    <parent
+      link="trunk_link" />
+    <child
+      link="left_shoulder_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_upper_arm_link">
+    <inertial>
+      <origin
+        xyz="1.5581421671791E-05 0.00189882901644226 -0.0148370921121416"
+        rpy="0 0 0" />
+      <mass
+        value="0.0736329738227649" />
+      <inertia
+        ixx="2.74971464540907E-07"
+        ixy="5.13464803850889E-08"
+        ixz="-4.01211721809277E-07"
+        iyy="8.65537819266129E-07"
+        iyz="3.46233609890552E-08"
+        izz="5.99428447377318E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_roll"
+    type="continuous">
+    <origin
+      xyz="0.000799999999999962 0.0414124235214481 -0.0100011504458026"
+      rpy="0 0 0" />
+    <parent
+      link="left_shoulder_pitch_link" />
+    <child
+      link="left_upper_arm_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="left_lower_arm_link">
+    <inertial>
+      <origin
+        xyz="0.000858599582491987 0.00883445221332618 -0.054567695678908"
+        rpy="0 0 0" />
+      <mass
+        value="0.14220055912703" />
+      <inertia
+        ixx="0.000249255716702434"
+        ixy="-9.0732203766427E-07"
+        ixz="5.20944785707559E-06"
+        iyy="0.000241567440897288"
+        iyz="4.15555732258231E-05"
+        izz="7.91342221796559E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_lower_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/left_lower_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_pitch"
+    type="continuous">
+    <origin
+      xyz="0.0269000000000003 0.0198943693660165 -0.156238516594114"
+      rpy="0 0 0" />
+    <parent
+      link="left_upper_arm_link" />
+    <child
+      link="left_lower_arm_link" />
+    <axis
+      xyz="0 0.991909982667118 0.126943240408133" />
+  </joint>
+  <link
+    name="neck_link">
+    <inertial>
+      <origin
+        xyz="-0.00023387356046315 8.12482959642487E-05 0.0306786945524138"
+        rpy="0 0 0" />
+      <mass
+        value="0.0765058369511012" />
+      <inertia
+        ixx="3.52314214783384E-06"
+        ixy="1.00286615574452E-10"
+        ixz="3.6785302331309E-08"
+        iyy="2.92863505796844E-06"
+        iyz="3.97252886802013E-07"
+        izz="5.95527128758955E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/neck_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/neck_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_yaw"
+    type="continuous">
+    <origin
+      xyz="-0.0048368 0.011028 0.068167"
+      rpy="0 0 0" />
+    <parent
+      link="trunk_link" />
+    <child
+      link="neck_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="head_link">
+    <inertial>
+      <origin
+        xyz="0.00398890756804758 -0.000110803129132073 0.0686986997026738"
+        rpy="0 0 0" />
+      <mass
+        value="0.195909652361941" />
+      <inertia
+        ixx="0.000341219231882817"
+        ixy="-2.68253343359366E-07"
+        ixz="5.37607871209407E-06"
+        iyy="8.1224638915362E-05"
+        iyz="3.07131326168665E-08"
+        izz="0.000406154766736708" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/head_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Full_E-NIMB/meshes/head_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_pitch"
+    type="continuous">
+    <origin
+      xyz="-0.00025 0.0001 0.0468"
+      rpy="0 0 0" />
+    <parent
+      link="neck_link" />
+    <child
+      link="head_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
